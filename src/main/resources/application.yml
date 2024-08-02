@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: dm-service
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: Purplecow23kK8*
+  security:
+    oauth2:
+      authorizationserver:
+        issuer: dev-ttg68m6kldzmflw5.us.auth0.com
+        client:
+          id: 30ufUhkbY63PdecwYuIxZGhkMDDK5JLe
+          secret: 0RhfTLvyrgm3m8KMx0C9ugl_UlmXulmQhWZxsYcEUtZUPE8mrFGOR7oBZTxM4Y7Q
+      client:
+        registration:
+          google:
+            client-id: 30ufUhkbY63PdecwYuIxZGhkMDDK5JLe
+            client-secret: 0RhfTLvyrgm3m8KMx0C9ugl_UlmXulmQhWZxsYcEUtZUPE8mrFGOR7oBZTxM4Y7Q
+          facebook:
+            client-id: 30ufUhkbY63PdecwYuIxZGhkMDDK5JLe
+            client-secret: 0RhfTLvyrgm3m8KMx0C9ugl_UlmXulmQhWZxsYcEUtZUPE8mrFGOR7oBZTxM4Y7Q
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+
+server:
+  port: 8080
+
+logging:
+    level:
+      root: info
+      org.springframework.web: info
+      com.auth0: info
+
+okta:
+  oauth2:
+    issuer: localhost
+    client-id: 30ufUhkbY63PdecwYuIxZGhkMDDK5JLe
