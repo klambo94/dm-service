@@ -6,6 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @Slf4j
 @RestController("/player")
@@ -68,7 +70,7 @@ public class PlayerController {
     @PostMapping("/player/{id}/update")
     public void updatePlayer(Long id, @RequestBody Player player) {
         log.info("Updating player: {}", id);
-        log.info("Updated player: {}", player);
+        log.info("New player info: {}", player);
 
         if(id == null || id > 0) {
             throw new RuntimeException("Invalid Request id");
@@ -80,5 +82,10 @@ public class PlayerController {
 
         playerRepository.save(player);
         log.info("Player Updated!");
+    }
+
+    @GetMapping("/passiveWisdom")
+    public List<Integer> fetchPlayersWisdom() {
+
     }
 }
